@@ -1,0 +1,71 @@
+body{
+  font-family: "Microsoft YaHei";
+}
+.my_service{
+  width: 1200px;
+  margin: 30px auto;
+}
+.my_service_title{
+  border-bottom: 2px solid #e3e3fa;
+  color: #999;
+  padding-bottom: 12px;
+}
+.times{
+  width: 140px;
+  margin: 55px 0;
+  position: relative;
+}
+
+.line{
+  border-left: 4px solid #e3e3fa;
+  margin-right: 12px;
+}
+.time_line_left{
+  position: absolute;
+  height: 196px;
+  width: 1px;
+  right:0;
+  top: -5px;
+  border: 1px solid #e3e3fa;
+}
+.clear_me{
+  clear:both;
+}
+.start{
+  margin-left: -8px;
+  margin-top: -16px;
+}
+.circle{
+  width: 16px;
+  height: 16px;
+  border: 2px solid #e3e3fa;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  position: absolute;
+}
+.end{
+  margin-left: -8px;
+  bottom: -16px;
+}
+
+.next_server{
+  text-align: center;
+  color: #e60012;
+  cursor: pointer;
+}
+.time_contents{
+  margin: 0 40px 50px;
+}
+.time_content{
+  width: 970px;
+  overflow: hidden;
+  max-height: 780px;
+  border: 1px solid #e3e3fa;
+  background-color: #F5F5F5;
+}
+.time_content_2{
+  max-height: 780px;
+  width: 985px;
+  overflow-y: scroll;
+}

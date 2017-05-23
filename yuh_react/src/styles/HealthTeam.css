@@ -1,0 +1,17 @@
+.content{
+  width: 1200px;
+  margin: 30px auto 50px;
+}
+.title{
+  border-bottom: 2px solid #e3e3fa;
+  color: #999;
+  padding-bottom: 12px;
+  width: 100%;
+}
+.line{
+  border-left: 4px solid #e3e3fa;
+  margin-right: 12px;
+}
+.clear{
+  clear: both;
+}
