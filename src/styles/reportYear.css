@@ -1,0 +1,23 @@
+.content{
+  padding: 30px;
+  color: #666;
+}
+.pu{
+  padding: 20px;
+}
+.title_A{
+  color: #000066;
+  border-bottom: 1px solid #000066;
+  padding-bottom: 10px;
+}
+.title_A > span{
+  border-left: 4px solid #000066;
+  margin-right: 10px;
+}
+.title_B{
+  color: #000066;
+  margin-top: 30px;
+}
+.red{
+  color: red;
+}

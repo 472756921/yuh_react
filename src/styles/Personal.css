@@ -1,0 +1,138 @@
+.content{
+  width: 1200px;
+  margin: 30px auto;
+  background-color: #fff;
+}
+.menu{
+  width:200px;
+  border-right: 1px solid #e3e3fa;
+}
+.clear{
+  clear: both;
+}
+
+
+
+/*用户中心公共样式*/
+.infoContent{
+  float: left;
+  width: 950px;
+  padding: 30px 0 30px 40px;
+  min-height: 600px;
+  border-left: 2px solid #f5f5f5;
+}
+.inputGroup{
+  width: 660px;
+  margin-top: 26px;
+}
+.inputGroup2{
+  width: 800px;
+  margin-top: 26px;
+}
+.inputGroup > div{
+  width: 100px;
+  float: left;
+  text-align: right;
+  margin-right: 30px;
+  line-height: 40px;
+}
+.inputGroup2 > div{
+  width: 100px;
+  float: left;
+  text-align: right;
+  margin-right: 30px;
+  line-height: 40px;
+}
+.inputGroup > input{
+  width: 400px;
+  height: 40px;
+  border: 1px solid #e3e3e3;
+  margin-right: 12px;
+  padding: 0 10px;
+}
+.inputGroup> select{
+  width: 400px;
+  height: 40px;
+  border: 1px solid #e3e3e3;
+  margin-right: 12px;
+  padding: 0 10px;
+}
+.inputGroup> select>option{
+  margin: 10px 0;
+}
+.inputGroup >textarea{
+  border: 1px solid #e3e3e3;
+  resize: none;
+  width: 400px;
+  height: 120px;
+  padding: 8px 10px;
+}
+.inputGroup2 >textarea{
+  border: 1px solid #e3e3e3;
+  resize: none;
+  width: 650px;
+  height: 100px;
+  padding: 8px 10px;
+}
+.inputGroup > span{
+  color: red;
+}
+.userHeadImg{
+  height: 140px;
+  width: 140px;
+  overflow: hidden;
+}
+.userHeadImg:before{
+  content: "更换头像";
+  position: absolute;
+  height: 140px;
+  width: 140px;
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+  line-height: 140px;
+  background: #999;
+  opacity: 0;
+  cursor: pointer;
+}
+.userHeadImg:hover::before{
+  opacity: .8;
+}
+.btnGroup{
+  width: 800px;
+}
+.btn{
+  width: 120px;
+  height: 40px;
+  background-color: #e3e3e3;
+  border: none;
+  border-radius: 5px;
+  margin: 40px auto 0;
+  display: block;
+}
+.btnActive{
+  width: 120px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  margin: 40px auto 0;
+  display: block;
+  background-color: #000066;
+  color: #ffffff;
+}
+.UserRadio{
+  width: 620px!important;
+}
+.UserRadio > label{
+  float: left;
+  margin: 2px 70px 0 0;
+  font-weight: 400;
+}
+.UserRadio > input{
+  border: 1px solid #f5f5f5;
+}
+.bottomBorder{
+  width: 100%;
+  border-bottom: 1px dashed #e3e3e3;
+  margin: 50px 0;
+}

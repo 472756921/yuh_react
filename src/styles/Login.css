@@ -1,0 +1,148 @@
+.content{
+  margin: 0 auto;
+  width: 1200px;
+  padding: 20px 0;
+}
+.top{
+  height: 60px;
+  overflow: auto;
+  border-bottom: 1px solid #e3e3e3;
+  cursor: pointer;
+}
+.res{
+  min-height: 550px;
+  padding: 70px 0 0 0;
+}
+.leftT{
+  float: left;
+}
+.rightT{
+  padding: 20px 80px 50px 50px;
+  float: left;
+  background-color: #fff;
+  margin-left: 40px;
+}
+.textGroup{
+  height: 55px;
+}
+.textGroup>input,select{
+  border: 1px solid #e3e3e3;
+  height:35px;
+  width: 260px;
+  padding-left: 5px;
+}
+.yzm{
+  width: 160px!important;
+}
+
+.text{
+  width: 100px;
+  float: left;
+  line-height: 40px;
+  text-align: right;
+  padding-right:10px;
+}
+.renm{
+  float: left;
+  margin-left:100px;
+}
+.tt{
+  float: right;
+  line-height: 24px;
+}
+.tt>span{
+  cursor: pointer;
+}
+.clear{
+  clear: both;
+}
+
+.btn_back{
+  background-color: #fff;
+  border: 1px solid #000066;
+  width: 120px;
+  border-radius: 2px;
+  height: 40px;
+  color: #fff;
+  background-color:#000066 ;
+  float: right;
+}
+.warring{
+  color: red;
+  height: 50px;
+  line-height: 50px;
+  text-align: right;
+}
+
+/*忘记密码*/
+.centerBlock{
+  width: 400px;
+  margin: 0 auto;
+}
+
+.btn_next{
+  background-color: #fff;
+  border: 1px solid #000066;
+  width: 120px;
+  border-radius: 2px;
+  height: 40px;
+  color: #fff;
+  background-color:#000066 ;
+  margin-top: 40px;
+}
+.red{
+  color: red;
+}
+.step{
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 100px;
+  overflow: auto;
+}
+.steplist{
+  float: left;
+  width: 400px;
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+  color: #666;
+}
+.steplist_active{
+  border-bottom: 1px solid #000066;
+  padding-bottom: 10px;
+  color: #000066;
+}
+.GroupTeams{
+  width: 1000px;
+  margin: 0 0 0 -300px;
+}
+.GroupTeam{
+  padding: 20px 0;
+  border-bottom: 1px solid #e3e3e3;
+  overflow: auto;
+  margin-bottom: 10px;
+}
+.GroupTeam>img{
+  float: left;
+  margin-right:10px;
+}
+.GroupTeam>div{
+  float: left;
+  width: 840px;
+}
+.GroupTeam>div>h4{
+  margin-top:  0;
+}
+.GroupTeam>div>div{
+  margin-bottom: 8px;
+}
+.GroupTeam>div>button{
+  border: 1px solid #000066;
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 8px 16px;
+}
+.GroupTeam>div>button:hover{
+  background-color: #000066;
+  color: #ffffff;
+}
