@@ -60,7 +60,6 @@ class DateLine extends React.Component{
 
     if(data.length==0){
       data = <div><ServiceContent content='暂无数据' date='暂无数据' position=""/></div>
-      console.log(data)
     }
 
     return(

@@ -61,7 +61,6 @@ class UserData extends React.Component{
 
     $("#File").change((es)=>{
       let file = this.refs.uploadImg.files[0];
-      console.log(file.size)
       let max_size = 1024*1024;
       if(file.size>max_size){
         alert("图片大小不能超过1M");

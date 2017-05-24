@@ -41,7 +41,6 @@ class AppComponent extends React.Component {
   constructor(props) {
     super(props);
     let user = localStorage.getItem('userInfroData');
-    console.log(JSON.parse(user));
     if(user!=null){
       sessionStorage.setItem('userData', user);
     }

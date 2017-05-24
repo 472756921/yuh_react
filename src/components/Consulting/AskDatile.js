@@ -116,7 +116,6 @@ class AskDatile extends React.Component{
 
 
   render(){
-    console.log(123)
     let data=<div>暂无数据</div>;
     if(this.state.data.length>0&&this.props.title=='ASKM'){
       data = this.state.data.map((obj,i)=>(

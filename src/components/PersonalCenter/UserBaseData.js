@@ -42,6 +42,15 @@ class UserBaseData extends React.Component{
   }
 
   render(){
+    $('input[type="checkbox"]').map((i,o)=>{
+      if(this.state.baseData.chronicDiseaseType==3){
+        o.defaultChecked=true;
+      }
+      if(o.value==this.state.baseData.chronicDiseaseType){
+        o.defaultChecked=true;
+      }
+    })
+
     return (
       <div className={PersonalStyle.infoContent}>
         <h3 style={{borderLeft:'4px solid #000066'}}>&nbsp;基本数据</h3>
@@ -49,6 +58,24 @@ class UserBaseData extends React.Component{
           e.preventDefault();
           let user = sessionStorage.getItem('userData');
           user = JSON.parse(user);
+
+          let ct1 = this.refs.ct1;
+          let ct2 = this.refs.ct2;
+
+          if(ct1.checked){
+             postJson['chronicDiseaseType']=1;
+          }
+          if(ct2.checked){
+             postJson['chronicDiseaseType']=2;
+          }
+          if(ct2.checked&&ct1.checked){
+             postJson['chronicDiseaseType']=3;
+          }
+          if(!ct1.checked&&!ct2.checked){
+            alert('请至少选择一项病症');
+            return;
+          }
+
           $.post(POSTUserBaseData(user.authToken),JSON.stringify(postJson),(rs,code)=>{
             if(code=='success'){
               alert('修改成功')
@@ -71,12 +98,16 @@ class UserBaseData extends React.Component{
           </div>
           <div className={PersonalStyle.inputGroup}>
             <div>病症 : </div>
-            <select className="form-control" name="chronicDiseaseType">
-              <option value="1" selected={this.state.baseData.chronicDiseaseType==1?'ture':'false'}>高血压</option>
-              <option value="2" selected={this.state.baseData.chronicDiseaseType==2?'ture':'false'}>糖尿病</option>
-              <option value="3" selected={this.state.baseData.chronicDiseaseType==3?'ture':'false'}>高血压兼糖尿病</option>
-            </select>
+            <div style={{textAlign:'left'}}>
+              <input type="checkbox" style={{width:"12px",verticalAlign:'sub'}} value="1" name="chronicDiseaseType" ref="ct1"/>
+              <b style={{fontWeight:'400'}}> 高血压</b>
+            </div>
+            <div style={{textAlign:'left'}}>
+              <input type="checkbox" style={{width:"12px",verticalAlign:'sub'}} value="2" name="chronicDiseaseType" ref="ct2"/>
+              <b style={{fontWeight:'400'}}> 糖尿病</b>
+            </div>
           </div>
+          <div className={PersonalStyle.clear}></div>
           <div className={PersonalStyle.inputGroup}>
             <div>健康状况 : </div>
             <textarea placeholder={this.state.baseData.healthCondition} name="healthCondition"></textarea>

@@ -109,8 +109,6 @@ class UserMedicalHistory extends React.Component{
 
     let user = sessionStorage.getItem('userData');
     user = JSON.parse(user);
-    console.log(user)
-
     return(
       <div className={PersonalStyle.infoContent}>
         <h3 style={{borderLeft:'4px solid #000066'}}>&nbsp;既往病史</h3>

@@ -31,7 +31,6 @@ class ArticleDetails extends React.Component{
     let user = sessionStorage.getItem('userData');
     user = JSON.parse(user);
     $.post(sendRead(type,id,user.authToken),(rs)=>{
-      console.log(rs)
     })
   }
 

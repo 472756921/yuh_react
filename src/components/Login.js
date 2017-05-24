@@ -82,17 +82,19 @@ class Login extends React.Component{
       }
     });
   }
+
   postMessages(rs){
     document.getElementById("child").contentWindow.postMessage(rs,'http://121.42.142.228:8080/#/login')
      window.location='http://121.42.142.228:8080';
   }
+
   render(){
     return(
       <div className={LoginStyle.content}>
         <div className={LoginStyle.top}>
           <img src={require('images/icon/logo.png')} onClick={()=>{hashHistory.push({pathname:'/'})}} />
         </div>
-        <iframe style={{opacity:'0',position:'absolute'}} id="child" src='http://121.42.142.228:8080/#/login' allowFullScreen></iframe>
+        <iframe style={{opacity:'0',position:'absolute'}} id="child" src='http://121.42.142.228:8080/#/login' onLoad={()=>{this.refs.YZMIMG.src='http://121.42.142.228:8080/captcha' + "?" + Math.random();}} allowFullScreen></iframe>
         <div className={LoginStyle.res}>
           <div className={LoginStyle.leftT}><img src={require('images/banner/loginBanner.jpg')}/></div>
           <div className={LoginStyle.rightT}>
