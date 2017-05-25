@@ -74,7 +74,7 @@ class MyData extends React.Component{
     $('#myModal').on('show.bs.modal', function (e) {
       $("#modalImg").empty();
       let btn = $(e.relatedTarget);
-      let src = btn[0].attributes[4].nodeValue;
+      let src = btn[0].attributes['data'].value;
       src = JSON.parse(src)
       src.map((o,i)=>{
           $("#modalImg").append('<img width="500" src="'+o.url+'" />');
