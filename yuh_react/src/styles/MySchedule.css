@@ -1,0 +1,14 @@
+.content{
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.title{
+  border-bottom: 2px solid #e3e3fa;
+  color: #999;
+  padding-bottom: 12px;
+}
+.line{
+  border-left: 4px solid #e3e3fa;
+  margin-right: 12px;
+}

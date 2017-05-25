@@ -1,0 +1,60 @@
+.box{
+  background-color: #f5f5f5;
+  overflow: auto;
+}
+.content{
+  width: 1200px;
+  margin: 30px auto;
+  overflow: auto;
+  background-color: #fff;
+}
+.menu{
+  width: 200px;
+  height: 840px;
+  border-right: 2px solid #f5f5f5;
+  float: left;
+}
+.menu > h3{
+  color: #999;
+  padding: 35px 20px 10px 34px;
+}
+.menu > ul{
+  padding: 0;
+  list-style: none;
+}
+.menu > ul > li{
+  line-height: 55px;
+  font-size: 16px;
+  padding-left: 30px;
+  cursor: pointer;
+}
+.menu > ul > li:hover{
+  background-color: #F5F5F5;
+}
+.menu > ul > li >img{
+  vertical-align: sub;
+}
+.active{
+  background: #F5F5F5;
+  color: #FA5050;
+  border-left: 4px solid #000066;
+}
+.dati{
+  float: left;
+  width: 1000px;
+  padding: 30px 45px;
+}
+.dati > h3{
+  color: #000066;
+  border-left: 4px solid #000066;
+  padding-left: 12px;
+}
+.dati>ul{
+  list-style: none;
+  padding-left: 16px;
+  margin-top: 30px;
+}
+.dati>ul>li{
+  line-height: 60px;
+  border-bottom: 1px dashed #ddd;
+}
