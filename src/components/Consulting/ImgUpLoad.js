@@ -38,7 +38,7 @@ class ImgUpLoad extends React.Component{
     })
   }
 
-  enterText(text){
+  enterText(){
     let medicalTxt = this.refs.medicalTxt;
     this.setState({
       ...this.state,
@@ -53,6 +53,15 @@ class ImgUpLoad extends React.Component{
 
   getData(){
     return this.state
+  }
+
+  clear(){
+    if(this.props.title=='上传药文本或图片'){
+      this.refs.medicalTxt.value = '';
+    }
+    this.setState({
+      img: '',
+    })
   }
 
   render(){

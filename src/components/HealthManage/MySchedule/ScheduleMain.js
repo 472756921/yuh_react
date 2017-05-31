@@ -28,6 +28,9 @@ class ScheduleMain extends React.Component{
     });
     //删除
     scheduler.attachEvent("onBeforeEventDelete", function(id,e){
+      if(e.type==undefined){
+        return true;
+      }
       if(e.type=='3'){
         $.get(DelDateEvent(user.authToken, e.id),(rs)=>{
         })

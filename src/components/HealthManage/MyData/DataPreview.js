@@ -32,7 +32,7 @@ class UploadData extends React.Component{
 
     return(
       <div className={UploadStyle.contents} style={{lineHeight:'40px',color:'#666'}}>
-        {this.state.states=='none'?'':<Load />}
+        {this.state.states=='doing'?<Load />:''}
         <form onSubmit={e=>{
           e.preventDefault();
 
@@ -59,12 +59,12 @@ class UploadData extends React.Component{
               alert('上传成功！')
               this.setState({
                 info: '提交成功',
-                states: 'none'
+                states: 'ok'
               })
             }.bind(this),
             error:function(data) {
               this.setState({
-                states:'none',
+                states:'error',
               })
               if(status=='timeout'){
                 this.setState({
@@ -121,7 +121,7 @@ class UploadData extends React.Component{
           </div>
           <div>随机血糖 : {typeof this.props.data.randomBloodSugar=='undefined'?<span style={{color:'red'}}>暂无数据</span>:this.props.data.randomBloodSugar+' mmol/L'}
             <div className="pull-right" style={{marginRight:'400px',color:'red'}}>
-              {typeof this.props.data.bloodFatCholWarning!='undefined'?<span><img style={{verticalAlign:'sub'}} src={ require('images/ICON/fuwu_icon4.png') } width="15"/> {this.props.data.bloodFatCholWarning}</span>:''}
+              {typeof this.props.data.morningSystolicPressureWarning!='undefined'?<span><img style={{verticalAlign:'sub'}} src={ require('images/ICON/fuwu_icon4.png') } width="15"/> {this.props.data.morningSystolicPressureWarning}</span>:''}
             </div>
           </div>
         </div>
@@ -162,7 +162,7 @@ class UploadData extends React.Component{
             </div>
           </div>
 
-          <div>静息心率 : {typeof this.props.data.heartRate=='undefined'?<span style={{color:'red'}}>暂无数据</span>:this.props.data.heartRate+' 次/分'}
+          <div>静息心率（晨起安静状态下心率） : {typeof this.props.data.heartRate=='undefined'?<span style={{color:'red'}}>暂无数据</span>:this.props.data.heartRate+' 次/分'}
             <div className="pull-right" style={{marginRight:'400px',color:'red'}}>
               {typeof this.props.data.heartRateWarning!='undefined'?<span><img style={{verticalAlign:'sub'}} src={ require('images/ICON/fuwu_icon4.png') } width="15"/> {this.props.data.heartRateWarning}</span>:''}
             </div>
@@ -203,7 +203,7 @@ class UploadData extends React.Component{
           <br/>
         <div className={UploadStyle.btngroup}>
           {this.state.info=='提交成功'?'':<button className={UploadStyle.BTN}>提交</button>}
-          <button className={UploadStyle.BTNBack} onClick={this.props.back}>返回</button>
+          <button className={UploadStyle.BTNBack} onClick={()=>this.props.back(this.state.states)}>返回</button>
         </div>
         </form>
       </div>

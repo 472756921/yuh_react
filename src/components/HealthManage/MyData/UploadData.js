@@ -46,7 +46,12 @@ class UploadData extends React.Component{
     event.target.value = event.target.value.replace(/[^\d.]/g,'')
   };
 
-  back(){
+  back(status){
+    $("#imgShowContent img").empty();
+    $("#imgShowContent2 img").empty();
+    if(status === 'ok') {
+      $('input').val('');
+    }
     this.setState({
       ...this.state,
       type:'input',
@@ -73,7 +78,7 @@ class UploadData extends React.Component{
     }
     let show = null;
     if(this.state.type=='show'){
-      show=<DataPushState data={this.state.data} json={this.state.json} back={()=>this.back()}/>
+      show=<DataPushState data={this.state.data} json={this.state.json} back={(status)=>this.back(status)}/>
     }
     return(
       <div className={UploadStyle.contents}>
@@ -279,7 +284,7 @@ class UploadData extends React.Component{
                 <span> % </span>
               </div>
               <div className={UploadStyle.inputGroup}>
-                <div>静息心率 : </div>
+                <div>静息心率（晨起安静状态下心率） : </div>
                 <input type="text" onChange={node=>this.onChange(node)} maxLength='5' ref={node=>{heartRate=node}}/>
                 <span> 次/分</span>
               </div>

@@ -63,14 +63,14 @@ class ASKDOC extends React.Component{
           medicalTxt = <div>{this.state.data.medicalTxt}</div>;
         }
         if (this.state.data.expertAdvice != undefined) {
-          if(this.state.data.expertAdvice.advice != undefined){
+          if(this.state.data.expertAdvice.advice != undefined || this.state.data.expertAdvice.addReportAdvice != undefined){
             expertAdvice = <div className={ASKDOCDatileStyle.charGroup}>
               <img src={this.state.data.expertAdvice.icon} height="85" width="85"/>
               <div className={ASKDOCDatileStyle.chatPo}>
                 <div className={ASKDOCDatileStyle.name}><span>{this.state.data.expertAdvice.realName}</span>
-                  <small>{this.state.data.expertAdvice.advice.split('<br/>')[0]}</small>
+                  <small>{this.state.data.expertAdvice.addReportAdvice != undefined?this.state.data.expertAdvice.addReportAdvice.split('<br/>')[0]:this.state.data.expertAdvice.advice.split('<br/>')[0]}</small>
                 </div>
-                <div className={ASKDOCDatileStyle.po}>{this.state.data.expertAdvice.advice.split('<br/>')[1]}</div>
+                <div className={ASKDOCDatileStyle.po}>{this.state.data.expertAdvice.addReportAdvice != undefined?this.state.data.expertAdvice.addReportAdvice.split('<br/>')[1]:this.state.data.expertAdvice.advice.split('<br/>')[1]}</div>
               </div>
             </div>
           }else{

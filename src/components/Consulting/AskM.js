@@ -45,6 +45,7 @@ class AskM extends React.Component{
         ASKMTIME: this.state.ASKMTIME-1
       })
     })
+    this.refs.content.value = '';
   }
 
   render(){
