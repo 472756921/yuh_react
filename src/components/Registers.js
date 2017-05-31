@@ -88,7 +88,7 @@ class Registers extends React.Component{
         if(rs.used){
           this.setState({
             ...this.state,
-            info:'对不起该账号已经被使用，请换个账号试试'
+            info:'对不起该账号已经被注册使用，请换个账号试试'
           })
           ua=false
         }
