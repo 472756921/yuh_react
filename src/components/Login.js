@@ -56,6 +56,7 @@ class Login extends React.Component{
       },
       error:(rs)=>{
         warring.innerText=rs.responseJSON.message;
+        this.refs.yzm.value='';
         this.changeYZM();
       }
     })

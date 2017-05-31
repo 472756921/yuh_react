@@ -34,7 +34,6 @@ class UserAnnounce extends React.Component{
   }
 
   componentDidMount(){
-
     $('#mainCheck').change((e)=>{
       let boxes = document.getElementsByClassName('checkboxList');
       for(let i=0;i<boxes.length;i++){
@@ -47,7 +46,7 @@ class UserAnnounce extends React.Component{
     let user = sessionStorage.getItem('userData');
     user = JSON.parse(user);
     $.get(GetmessagesByID(id,user.authToken,2),(rs)=>{
-      this.state.no.results.map((o,i)=>{
+      this.state.ad.results.map((o,i)=>{
         if(id== o.id&& o.isRead==false){
           this.props.noRead('adm');
           o.isRead=true
