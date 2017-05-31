@@ -201,7 +201,7 @@ class UploadData extends React.Component{
               <span> mm/HG</span>
             </div>
             <div className={UploadStyle.inputGroup}>
-              <div>收缩（低）压 : </div>
+              <div>舒张（低）压 : </div>
               <input type="text" onChange={node=>this.onChange(node)} maxLength='5' ref={node=>{morningDiastolicPressure=node}}/>
               <span> mm/HG</span>
             </div>

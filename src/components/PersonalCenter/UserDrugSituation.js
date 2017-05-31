@@ -83,6 +83,11 @@ class UserDrugSituation extends React.Component{
     }
   }
 
+  clear() {
+   this.refs.mid.clear();
+   this.refs.midH.clear();
+  }
+
 
   render(){
     let ti=[];
@@ -106,10 +111,12 @@ class UserDrugSituation extends React.Component{
     let mName=null;
     let mNameH=null;
     if(this.state.medicine!=''){
-      mName = <SelectInput ref="mid" data={this.state.medicine} type="mid" check={(type,id)=>this.check(type,id)}/>
+      mName = <SelectInput ref="mid" data={this.state.medicine} type="mid" check={(type,value,id)=>this.check(type,value,id)}/>
       mNameH =  <SelectInput ref="midH" data={this.state.medicineH} type="midH" check={(type,id)=>this.check(type,id)}/>
     }
     let startTime,endTime,medicineName,frequencyUnit,singleDose,medicineUnit,usingFrequency,historyOfAllergy,drugAddiction,medicineID;
+    medicineName = this.refs.medicineName;
+    medicineID = this.refs.medicineID;
     return(
       <div className={PersonalStyle.infoContent}>
         <h3 style={{borderLeft:'4px solid #000066'}}>&nbsp;药物情况</h3>
@@ -224,7 +231,7 @@ class UserDrugSituation extends React.Component{
 
         <div className={PersonalStyle.inputGroup}>
           <div>&nbsp;</div>
-          <span> <button className={PersonalStyle.btnActive} type="reset">清空药物</button></span>
+          <span> <button className={PersonalStyle.btnActive} type="button" onClick={()=>this.clear()}>清空药物</button></span>
         </div>
 
         <div className={PersonalStyle.inputGroup}>

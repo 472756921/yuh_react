@@ -59,7 +59,7 @@ class Service extends React.Component{
                   </ul>
                 </div>
                 <div className={ServiceStyle.title}>
-                  <span>02</span><span>阶段报告</span>
+                  <span>03</span><span>阶段报告</span>
                   <ul className={ServiceStyle.textList}>
                     <li><img src={require('images/ICON/service/fuwu_icon7.png')}  />健康风险评估报告</li>
                     <li><img src={require('images/ICON/service/fuwu_icon8.png')}  />个人健康管理计划</li>

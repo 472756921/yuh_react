@@ -13,6 +13,13 @@ class SelectInput extends React.Component{
       yaowuName: '',
     }
   }
+  clear() {
+    this.setState({
+      ...this.state,
+      dataFind:this.state.data,
+    })
+    this.refs.serch.value = '';
+  }
   serch(){
     this.refs.list.style.display='block';
   }
@@ -45,7 +52,8 @@ class SelectInput extends React.Component{
       dataFind:list,
     })
   }
-  checks(id,value){
+
+  checks(id,value,type){
     if(value=='没有结果'){
       return
     }
@@ -57,7 +65,6 @@ class SelectInput extends React.Component{
     this.setState({
       ...this.state,
       dataFind:value,
-      data:value,
     })
   }
 
@@ -70,7 +77,7 @@ class SelectInput extends React.Component{
             <ul className={SelectInputStyle.uls2} ref="list">
               {this.state.dataFind.map((o,i)=>{
                 return (
-                  <li onClick={()=>this.checks(o.id,o.name)} key={i}>{o.name}</li>
+                  <li onClick={()=>this.checks(o.id,o.name,'mid')} key={i}>{o.name}</li>
                 )
               })}
             </ul>

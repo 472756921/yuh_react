@@ -93,7 +93,7 @@ class UploadData extends React.Component{
                 {typeof this.props.data.morningSystolicPressureWarning!='undefined'?<span><img style={{verticalAlign:'sub'}} src={ require('images/ICON/fuwu_icon4.png') } width="15"/> {this.props.data.morningSystolicPressureWarning}</span>:''}
               </div>
             </div>
-            <div>收缩（低）压 :  {typeof this.props.data.morningDiastolicPressure=='undefined'?<span style={{color:'red'}}>暂无数据</span>:this.props.data.morningDiastolicPressure+' mm/HG'}
+            <div>舒张（低）压 :  {typeof this.props.data.morningDiastolicPressure=='undefined'?<span style={{color:'red'}}>暂无数据</span>:this.props.data.morningDiastolicPressure+' mm/HG'}
               <div className="pull-right" style={{marginRight:'400px',color:'red'}}>
                 {typeof this.props.data.morningDiastolicPressureWarning!='undefined'?<span><img style={{verticalAlign:'sub'}} src={ require('images/ICON/fuwu_icon4.png') } width="15"/> {this.props.data.morningDiastolicPressureWarning}</span>:''}
               </div>
