@@ -32,10 +32,10 @@ class AskM extends React.Component{
   };
 
   ASKDOCPosts(){
-    //if(this.state.ASKTIMEDOCTIME==0){
-    //  this.refs.tishi.innerHTML='对不起您本月咨询次数已经用尽';
-    //  return;
-    //}
+    if(this.state.ASKTIMEDOCTIME==0){
+      this.refs.tishi.innerHTML='对不起您本月咨询次数已经用尽';
+      return;
+    }
     if(this.refs.desc.value==''||this.refs.help.value==''){
       this.refs.tishi.innerHTML='请输入个人既往病史、请输入希望医生提供的帮助';
       return

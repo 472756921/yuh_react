@@ -392,7 +392,7 @@ export const getMessagesNoRead = (authToken,type)=>{
   const httpAPI = _API+'app/api/account/statistics/'+type;
   return {url:httpAPI,type:'GET',headers: {
     "authToken":authToken
-  }};
+  },error(){ sessionStorage.clear('userData');localStorage.clear();}};
 }
 //获取未读消息（type   1消息  2公告）
 export const getMesNoRead = (authToken,type)=>{
@@ -519,3 +519,12 @@ export const register= ()=>{
   const httpAPI = _API+'app/api/account/register';
   return {url:httpAPI,type:'post',contentType:'application/json'};
 }
+
+//问医生，补充资料
+export const buchongtijiao= (id,authToken)=>{
+  const httpAPI = _API+'app/api/account/health/consult/'+id;
+  return {url:httpAPI,type:'post',contentType:'application/json',headers: {
+    "authToken":authToken
+  }};
+}
+

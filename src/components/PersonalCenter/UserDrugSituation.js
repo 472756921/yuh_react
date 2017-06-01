@@ -86,6 +86,9 @@ class UserDrugSituation extends React.Component{
   clear() {
    this.refs.mid.clear();
    this.refs.midH.clear();
+    $("#flatpickr_tryme_s").val('');
+    $("#flatpickr_tryme_e").val('');
+    $("#ssml").val('');
   }
 
 
@@ -149,16 +152,31 @@ class UserDrugSituation extends React.Component{
             alert('开始时间不能大于结束时间')
             return false
           }
-          postJson.medicationUsingSituations.push({
-            startTime:startTime.value,
-            endTime:endTime.value,
-            medicineName:medicineName.value.split(',')[0],
-            medicineId:medicineID.value.split(',')[1],
-            frequencyUnit:frequencyUnit.value,
-            singleDose:singleDose.value,
-            medicineUnit:medicineUnit.value,
-            usingFrequency:usingFrequency.value,
-          })
+
+          if(postJson.medicationUsingSituations != null) {
+             postJson.medicationUsingSituations.push({
+              startTime:startTime.value,
+              endTime:endTime.value,
+              medicineName:medicineName.value,
+              medicineId:medicineID.value,
+              frequencyUnit:frequencyUnit.value,
+              singleDose:singleDose.value,
+              medicineUnit:medicineUnit.value,
+              usingFrequency:usingFrequency.value,
+            })
+          } else {
+            postJson.medicationUsingSituations=[{
+              startTime:startTime.value,
+              endTime:endTime.value,
+              medicineName:medicineName.value,
+              medicineId:medicineID.value,
+              frequencyUnit:frequencyUnit.value,
+              singleDose:singleDose.value,
+              medicineUnit:medicineUnit.value,
+              usingFrequency:usingFrequency.value,
+            }]
+          }
+
 
           if(historyOfAllergy.value!=''){
             postJson.historyOfAllergy=historyOfAllergy.value;
@@ -180,6 +198,7 @@ class UserDrugSituation extends React.Component{
                   ...this.state,
                   situatio: rs
                 })
+                this.clear();
               })
             }
           })
@@ -217,7 +236,7 @@ class UserDrugSituation extends React.Component{
           <select style={{width:'100px'}} ref={node=>{usingFrequency=node}}>
             {ti}
           </select>
-          <input placeholder="单次用药量" style={{width:'100px'}}  ref={node=>{singleDose=node}}/>
+          <input placeholder="单次用药量" style={{width:'100px'}} id="ssml"  ref={node=>{singleDose=node}}/>
           <select style={{width:'65px'}} ref={node=>medicineUnit=node}>
             <option value="g">g</option>
             <option value="mg">mg</option>

@@ -139,10 +139,10 @@ class AskDatile extends React.Component{
             status= '已提交';
             break;
           case 2:
-            status= '补充报告';
+            status= '返回患者，补充报告';
             break;
           case 3:
-            if(obj.isCommented)
+            if(obj.isDiscuss)
               status= '医生提交到讨论组';
             else
               status= '医生正在处理';
