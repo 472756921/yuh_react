@@ -129,52 +129,52 @@ class UserMedicalHistory extends React.Component{
           <div style={{float:'left',width:'100%'}}>
             <div className={PersonalStyle.inputGroup2}>
               <div>疾病史 : </div>
-              <textarea name="medical" placeholder={this.state.history.medical}></textarea>
+              <textarea maxLength="250" name="medical" placeholder={this.state.history.medical}></textarea>
             </div>
             <div className={PersonalStyle.inputGroup2}>
               <div>传染病史 : </div>
-              <textarea name="infection" placeholder={this.state.history.infection}></textarea>
+              <textarea maxLength="250" name="infection" placeholder={this.state.history.infection}></textarea>
             </div>
             <div className={PersonalStyle.inputGroup2}>
               <div>外伤史 : </div>
-              <textarea name="trauma" placeholder={this.state.history.trauma}></textarea>
+              <textarea maxLength="250" name="trauma" placeholder={this.state.history.trauma}></textarea>
             </div>
             <div className={PersonalStyle.inputGroup2}>
               <div>手术史 : </div>
-              <textarea name="operation" placeholder={this.state.history.operation}></textarea>
+              <textarea maxLength="250" name="operation" placeholder={this.state.history.operation}></textarea>
             </div>
             <div className={PersonalStyle.inputGroup2}>
               <div>预防接种史 : </div>
-              <textarea name="vaccinationHistory" placeholder={this.state.history.vaccinationHistory}></textarea>
+              <textarea maxLength="250" name="vaccinationHistory" placeholder={this.state.history.vaccinationHistory}></textarea>
             </div>
             <div className={PersonalStyle.inputGroup2}>
               <div>中毒史 : </div>
-              <textarea name="allergic" placeholder={this.state.history.allergic}></textarea>
+              <textarea maxLength="250" name="allergic" placeholder={this.state.history.allergic}></textarea>
             </div>
             <div className={PersonalStyle.inputGroup2}>
               <div>输血史 : </div>
-              <textarea name='blood' placeholder={this.state.history.blood}></textarea>
+              <textarea maxLength="250" name='blood' placeholder={this.state.history.blood}></textarea>
             </div>
             <div className={PersonalStyle.inputGroup2}>
               <div>家族病史 : </div>
-              <textarea name="familyMedical" placeholder={this.state.history.familyMedical}></textarea>
+              <textarea maxLength="250" name="familyMedical" placeholder={this.state.history.familyMedical}></textarea>
             </div>
             {user.gender=='MALE'?'':  <div className={PersonalStyle.inputGroup2}>
               <div>孕娩、流产史 : </div>
-              <textarea name="pregnancy" placeholder={this.state.history.pregnancy}></textarea>
+              <textarea maxLength="250" name="pregnancy" placeholder={this.state.history.pregnancy}></textarea>
             </div>}
             {user.gender=='MALE'?'':
             <div className={PersonalStyle.inputGroup2}>
               <div>经期情况 : </div>
-              <textarea name="menstruation" placeholder={this.state.history.menstruation}></textarea>
+              <textarea maxLength="250" name="menstruation" placeholder={this.state.history.menstruation}></textarea>
             </div>}
             <div className={PersonalStyle.inputGroup2}>
               <div>其他补充情况 : </div>
-              <textarea name="others" placeholder={this.state.history.others}></textarea>
+              <textarea maxLength="250" name="others" placeholder={this.state.history.others}></textarea>
             </div>
             <div className={PersonalStyle.inputGroup2}>
               <div>系统回顾 : </div>
-              <textarea name="retrospection" placeholder={this.state.history.retrospection}></textarea>
+              <textarea maxLength="250" name="retrospection" placeholder={this.state.history.retrospection}></textarea>
             </div>
 
             <div className={PersonalStyle.inputGroup2}>
@@ -237,7 +237,7 @@ class UserMedicalHistory extends React.Component{
         </div>
         <div className={PersonalStyle.inputGroup2}>
           <div>情况描述 : </div>
-          <textarea ref="sqation"></textarea>
+          <textarea maxLength="250" ref="sqation"></textarea>
           <br/>
           <span style={{marginLeft:'130px',color:'red'}}>*请简要描述就医情况</span>
         </div>

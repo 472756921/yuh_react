@@ -201,7 +201,7 @@ class UploadData extends React.Component{
           {this.state.info}
         </div>
           <br/>
-        <div className={UploadStyle.btngroup}>
+        <div className={UploadStyle.btngroup} style={this.props.pos!=undefined?{display:'none'}:{}}>
           {this.state.info=='提交成功'?'':<button className={UploadStyle.BTN}>提交</button>}
           <button className={UploadStyle.BTNBack} onClick={()=>this.props.back(this.state.states)}>返回</button>
         </div>

@@ -528,3 +528,10 @@ export const buchongtijiao= (id,authToken)=>{
   }};
 }
 
+//nmmp
+export const chakannmmp= (id,authToken)=>{
+  const httpAPI = _API+'app/api/account/health/check/info/'+id;
+  return {url:httpAPI,type:'get',contentType:'application/json',headers: {
+    "authToken":authToken
+  }};
+}

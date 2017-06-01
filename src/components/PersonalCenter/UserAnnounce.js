@@ -66,7 +66,6 @@ class UserAnnounce extends React.Component{
   alread(type,id){
     let user = sessionStorage.getItem('userData');
     user = JSON.parse(user);
-
     //   标记已读type=1 和删除type=2,单个删除type=3 传入ID
     let ids = [];
     if(type!=3){
@@ -76,15 +75,13 @@ class UserAnnounce extends React.Component{
       ids.push(id);
       type=2;
     }
-
-
-    $.post(redmessages(user.authToken),JSON.stringify({ids:ids,operate:type,type:1}),()=>{
-        $.get(Getmessages(1,10,2,user.authToken),(rs)=>{
-          this.setState({
-            ad:rs
-          })
-          location.reload();
+    $.post(redmessages(user.authToken),JSON.stringify({ids:ids,operate:type,type:2}),()=>{
+      $.get(Getmessages(1,10,2,user.authToken),(rs)=>{
+        this.setState({
+          ad:rs
         })
+        location.reload();
+      })
     })
   }
 

@@ -71,7 +71,7 @@ class AskDatile extends React.Component{
       if(this.state.active=='all'){
         this.getAllList(pageNow,user);
       }else{
-        this.getAllList(pageNow,user);
+        this.getMyList(pageNow,user);
       }
 
     }else{

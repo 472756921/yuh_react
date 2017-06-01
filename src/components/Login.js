@@ -99,9 +99,9 @@ class Login extends React.Component{
         <div className={LoginStyle.res}>
           <div className={LoginStyle.leftT}><img src={require('images/banner/loginBanner.jpg')}/></div>
           <div className={LoginStyle.rightT}>
-            <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>账号:</div><input ref="userName"/></div>
-            <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>密码:</div><input ref="pwd" type="password"/></div>
-            <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>验证码:</div><input id="yzm" ref="yzm" className={LoginStyle.yzm}/>
+            <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>账号:</div><input ref="userName" maxLength="32"/></div>
+            <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>密码:</div><input ref="pwd" type="password" maxLength="32"/></div>
+            <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>验证码:</div><input id="yzm" ref="yzm" maxLength="4" className={LoginStyle.yzm}/>
               <img height="35px" src='http://121.42.142.228:8080/captcha' ref="YZMIMG" style={{verticalAlign:'top',cursor:'pointer'}} title="点击切换" onClick={()=>this.changeYZM()}/>
             </div>
             <div>

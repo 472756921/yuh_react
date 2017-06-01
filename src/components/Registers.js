@@ -248,15 +248,15 @@ class Registers extends React.Component{
             <div className={[LoginStyle.steplist,this.state.step==3?LoginStyle.steplist_active:''].join(' ')} >选择健康团队</div>
           </div>
           <div className={LoginStyle.centerBlock} style={this.state.step==1?{display:'block'}:{display:'none'}}>
-            <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>账号: </div><input ref="userName" placeholder="长度在6~32位之间" onKeyDown={()=>{this.nameCheck()}}/><span className={LoginStyle.red}> *</span></div>
-            <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>密码: </div><input ref="pwd" placeholder="长度在6~32位之间，且包含字母和数字" type="password"/><span className={LoginStyle.red}> *</span></div>
-            <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>确认密码: </div><input ref="pwdAg" type="password"/><span className={LoginStyle.red}> *</span></div>
-            <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>密保问题: </div><input ref="safeQuestion" type="text"/><span className={LoginStyle.red}> *</span></div>
-            <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>密保答案: </div><input ref="safeAnswer" type="text"/><span className={LoginStyle.red}> *</span></div>
+            <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>账号: </div><input ref="userName" maxLength="32" placeholder="长度在6~32位之间" onKeyDown={()=>{this.nameCheck()}}/><span className={LoginStyle.red}> *</span></div>
+            <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>密码: </div><input ref="pwd" maxLength="32" placeholder="长度在6~32位之间，且包含字母和数字" type="password"/><span className={LoginStyle.red}> *</span></div>
+            <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>确认密码: </div><input ref="pwdAg" maxLength="32" type="password"/><span className={LoginStyle.red}> *</span></div>
+            <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>密保问题: </div><input ref="safeQuestion" maxLength="32" type="text"/><span className={LoginStyle.red}> *</span></div>
+            <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>密保答案: </div><input ref="safeAnswer" maxLength="32" type="text"/><span className={LoginStyle.red}> *</span></div>
           </div>
 
           <div className={LoginStyle.centerBlock} style={this.state.step==2?{display:'block'}:{display:'none'}}>
-            <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>姓名: </div><input ref="userPet" placeholder="长度在不能大于20个字符"/><span className={LoginStyle.red}> *</span></div>
+            <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>姓名: </div><input ref="userPet" maxLength="32" placeholder="长度在不能大于20个字符"/><span className={LoginStyle.red}> *</span></div>
             <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>性别: </div>
               <select ref="sex">
                 <option value="MALE">男</option>
@@ -264,7 +264,7 @@ class Registers extends React.Component{
               </select>
               <span className={LoginStyle.red}> *</span>
             </div>
-            <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>身份证号码: </div><input onBlur={()=>this.checkBrth()} ref="IDDard" type="text"/><span className={LoginStyle.red}> *</span></div>
+            <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>身份证号码: </div><input maxLength="18" onBlur={()=>this.checkBrth()} ref="IDDard" type="text"/><span className={LoginStyle.red}> *</span></div>
             <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>出生年月: </div><input ref="bri" type="text" disabled/><span className={LoginStyle.red}> *</span></div>
             <div className={LoginStyle.textGroup}>
               <div className={LoginStyle.text}>所在地: </div>

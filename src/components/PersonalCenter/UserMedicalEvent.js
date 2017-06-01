@@ -80,7 +80,7 @@ class UserMedicalEvent extends React.Component{
             </div>
             <div className={PersonalStyle.inputGroup}>
               <div>其他类型描述 : </div>
-              <textarea ref="description" placeholder={this.state.event.description}></textarea>
+              <textarea maxLength="250" ref="description" placeholder={this.state.event.description}></textarea>
             </div>
           </div>
           <div className={PersonalStyle.clear}></div>

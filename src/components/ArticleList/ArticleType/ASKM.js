@@ -61,7 +61,7 @@ class ASKM extends React.Component{
         <div className={ASKDatileStyle.chat}>
           {list}
         </div>
-        <textarea className={ASKDatileStyle.textAreas} placeholder="请输入回复内容" ref="userInput"></textarea>
+        <textarea maxLength="250" className={ASKDatileStyle.textAreas} placeholder="请输入回复内容" ref="userInput"></textarea>
         <div className={ASKDatileStyle.btnGroup}>
           <button className={ASKDatileStyle.btn} onClick={()=>this.usreInput()}>回复</button>
           <button className={ASKDatileStyle.btn_back} onClick={()=>{window.history.back()}}>返回</button>

@@ -134,16 +134,16 @@ class ForgetPWD extends React.Component{
             <div className={LoginStyle.steplist}>修改完成</div>
           </div>
           <div className={LoginStyle.centerBlock} style={this.state.step==1?{}:{display:'none'}}>
-              <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>账号:</div><input ref="userName"/><span className={LoginStyle.red}> *</span></div>
-              <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>身份证号码:</div><input ref="idNum"/><span className={LoginStyle.red}> *</span></div>
+              <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>账号:</div><input ref="userName" maxLength="32"/><span className={LoginStyle.red}> *</span></div>
+              <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>身份证号码:</div><input ref="idNum" maxLength="18"/><span className={LoginStyle.red}> *</span></div>
           </div>
           <div className={LoginStyle.centerBlock} style={this.state.step==2?{}:{display:'none'}}>
               <div className={LoginStyle.textGroup} style={{textAlign:'center'}} ref="que"></div>
-              <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>答案:</div><input ref="ans"/><span className={LoginStyle.red}> *</span></div>
+              <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>答案:</div><input ref="ans" maxLength="50"/><span className={LoginStyle.red}> *</span></div>
           </div>
           <div className={LoginStyle.centerBlock} style={this.state.step==3?{}:{display:'none'}}>
-            <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>新密码:</div><input ref="newpwd" type="password" /><span className={LoginStyle.red}> *</span></div>
-            <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>确认密码:</div><input ref="newpwdA" type="password" /><span className={LoginStyle.red}> *</span></div>
+            <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>新密码:</div><input ref="newpwd" type="password"  maxLength="32"/><span className={LoginStyle.red}> *</span></div>
+            <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>确认密码:</div><input ref="newpwdA" type="password"  maxLength="32"/><span className={LoginStyle.red}> *</span></div>
           </div>
 
           <div className={LoginStyle.centerBlock} style={this.state.step==4?{}:{display:'none'}}>

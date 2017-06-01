@@ -83,17 +83,17 @@ class ChangePWD extends React.Component{
         <div style={{float:'left'}}>
           <div className={PersonalStyle.inputGroup}>
             <div>当前密码 : </div>
-            <input  ref="oldPassword"  type="password"/>
+            <input maxLength="32" ref="oldPassword"  type="password"/>
             <span>*</span>
           </div>
           <div className={PersonalStyle.inputGroup}>
             <div>新密码 : </div>
-            <input ref="newPassword"  type="password"/>
+            <input maxLength="32" ref="newPassword"  type="password"/>
             <span>*</span>
           </div>
           <div className={PersonalStyle.inputGroup}>
             <div>确认新密码 : </div>
-            <input  type="password" ref="newPasswordAg" />
+            <input maxLength="32" type="password" ref="newPasswordAg" />
             <span>*</span>
             <h6 className="text-center" style={{color:'red',margin:'10px 0 0 0'}}>{this.state.info}</h6>
           </div>

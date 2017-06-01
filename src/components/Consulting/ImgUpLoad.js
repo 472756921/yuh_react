@@ -80,10 +80,10 @@ class ImgUpLoad extends React.Component{
 
     let plcon;
     if(this.props.title=='上传药文本或图片'){
-      plcon = <div><div onClick={()=>this.tis()} className='text-right' style={{color:'red',cursor:'pointer'}}>没有图片?点击添加文字描述</div><textarea onChange={()=>this.enterText()} ref="medicalTxt" style={{resize:'none',width:'100%',border:'1px solid #e3e3e3',display:'none'}}></textarea></div>;
+      plcon = <div><div onClick={()=>this.tis()} className='text-right' style={{color:'red',cursor:'pointer'}}>没有图片?点击添加文字描述</div><textarea maxLength="250" onChange={()=>this.enterText()} ref="medicalTxt" style={{resize:'none',width:'100%',border:'1px solid #e3e3e3',display:'none'}}></textarea></div>;
     }
     if(this.props.title=='补充病情描述'){
-      plcon = <div><div onClick={()=>this.tis()} className='text-right' style={{color:'red',cursor:'pointer'}}>补充病情描述</div><textarea onChange={()=>this.enterText()} ref="medicalTxt" style={{resize:'none',width:'100%',border:'1px solid #e3e3e3',display:'none'}}></textarea></div>;
+      plcon = <div><div onClick={()=>this.tis()} className='text-right' style={{color:'red',cursor:'pointer'}}>补充病情描述</div><textarea maxLength="250" onChange={()=>this.enterText()} ref="medicalTxt" style={{resize:'none',width:'100%',border:'1px solid #e3e3e3',display:'none'}}></textarea></div>;
     }
     return (
       <div className={ImgUpLoadStyle.content}>

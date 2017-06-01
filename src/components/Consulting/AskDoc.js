@@ -83,11 +83,11 @@ class AskM extends React.Component{
               {this.state.data.detail}
             </p>
             <div><span style={{color:'red'}}>*</span> 病情简述：</div>
-            <textarea className={AskMStyle.textareas} rows="5" placeholder="描述病情，主要的身体不适或症状或表现" ref="desc"></textarea>
+            <textarea maxLength="250" className={AskMStyle.textareas} rows="5" placeholder="描述病情，主要的身体不适或症状或表现" ref="desc"></textarea>
             <ImgUpLoad  title="上传已做的检查项目"  ref="imagA" />
             <ImgUpLoad  title="上传药文本或图片" ref="imagB" />
             <div><span style={{color:'red'}}>*</span> 希望医生提供的帮助：</div>
-            <textarea className={AskMStyle.textareas} rows="3" ref="help"></textarea>
+            <textarea maxLength="250" className={AskMStyle.textareas} rows="3" ref="help"></textarea>
           </div>
           <button className={[AskMStyle.btn,'center-block'].join(' ')} onClick={()=>this.ASKDOCPosts()}>提交问题</button>
         </div>

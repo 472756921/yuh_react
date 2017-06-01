@@ -329,7 +329,7 @@ class UploadData extends React.Component{
               <div style={{color:'#999'}}>如有多个检查项目，请在检查项目说明，并可上传多张检查报告</div>
               <br/>
               <div style={{float:'left'}}>检查报告: </div>
-              <textarea className="form-control" className={UploadStyle.textAre} ref={node=>{checkItem=node}}></textarea>
+              <textarea maxLength="250" className="form-control" className={UploadStyle.textAre} ref={node=>{checkItem=node}}></textarea>
             </div>
             <div style={{position:'relative'}}>
               <span>检查报告图片:</span>

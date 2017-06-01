@@ -152,7 +152,7 @@ class ASKDOC extends React.Component{
                   <input type="radio" id="rate1-4" name="rating" value="1" />
                   <label htmlFor="rate1-4" title="Terrible">1 star</label>
                 </div>
-                <textarea style={{resize:'none',width:'100%'}} rows="5" ref="Comment"></textarea>
+                <textarea style={{resize:'none',width:'100%'}} rows="5" maxLength="250" ref="Comment"></textarea>
               </div>
               <div className="modal-footer">
                 <button type="button" className="btn btn-primary" style={{background:'#000066'}} onClick={()=>this.postComments()}>评价</button>

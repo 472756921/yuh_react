@@ -236,7 +236,7 @@ class UserDrugSituation extends React.Component{
           <select style={{width:'100px'}} ref={node=>{usingFrequency=node}}>
             {ti}
           </select>
-          <input placeholder="单次用药量" style={{width:'100px'}} id="ssml"  ref={node=>{singleDose=node}}/>
+          <input maxLength="5" placeholder="单次用药量" style={{width:'100px'}} id="ssml"  ref={node=>{singleDose=node}}/>
           <select style={{width:'65px'}} ref={node=>medicineUnit=node}>
             <option value="g">g</option>
             <option value="mg">mg</option>
@@ -255,12 +255,12 @@ class UserDrugSituation extends React.Component{
 
         <div className={PersonalStyle.inputGroup}>
           <div>过敏史:</div>
-          <textarea placeholder={this.state.situatio.drugAddiction==''?'暂无':this.state.situatio.drugAddiction} ref={node=>{drugAddiction=node}}></textarea>
+          <textarea  maxLength="100" placeholder={this.state.situatio.drugAddiction==''?'暂无':this.state.situatio.drugAddiction} ref={node=>{drugAddiction=node}}></textarea>
           <br/>
         </div>
         <div className={PersonalStyle.inputGroup}>
           <div>成瘾药物 : </div>
-          <textarea placeholder={this.state.situatio.historyOfAllergy==''?'暂无':this.state.situatio.historyOfAllergy}  ref={node=>{historyOfAllergy=node}}></textarea>
+          <textarea maxLength="100" placeholder={this.state.situatio.historyOfAllergy==''?'暂无':this.state.situatio.historyOfAllergy}  ref={node=>{historyOfAllergy=node}}></textarea>
           <br/>
         </div>
 

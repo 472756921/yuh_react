@@ -31,6 +31,10 @@ class AskM extends React.Component{
       this.refs.tishi.innerHTML='请输入提问内容';
       return
     }
+    if(content.length > 250){
+      this.refs.tishi.innerHTML='提问长度不能超过250个字符';
+      return
+    }
     if(this.state.ASKMTIME==0){
       this.refs.tishi.innerHTML='对不起您本月咨询次数已经用尽';
       return
@@ -61,7 +65,7 @@ class AskM extends React.Component{
           <div ref="tishi"></div>
           <h4 className={AskMStyle.title_}><img src={require('images/ICON/edit.png')} height="22" style={{verticalAlign:'bottom'}}/> 立即提问</h4>
           <div className={AskMStyle.context}>
-            <textarea className={AskMStyle.textareas} rows="5" placeholder="描述病情，主要的身体不适或症状或表现" ref="content"></textarea>
+            <textarea maxLength="250" className={AskMStyle.textareas} rows="5" placeholder="描述病情，主要的身体不适或症状或表现" ref="content"></textarea>
           </div>
           <button className={[AskMStyle.btn,'center-block'].join(' ')} onClick={()=>this.postAdv()}>提交问题</button>
         </div>

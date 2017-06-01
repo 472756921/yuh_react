@@ -4,13 +4,16 @@
 import React from 'react';
 import PersonalStyle from '../../styles/Personal.css';
 import Page from '../Page/Page';
-import {Getmessages,GetmessagesByID,redmessages} from  '../../InterFace/InterfaceAPI';
+import {Getmessages,GetmessagesByID,redmessages,chakannmmp} from  '../../InterFace/InterfaceAPI';
+import DataPushState from '../HealthManage/MyData/DataPreview';
 
 class Usernotice extends React.Component{
   constructor(props) {
     super(props);
     this.pageChange=this.pageChange.bind(this)
     this.state={
+      nimmpData:'',
+      nimmpDataShow: false,
       no:'',
       pageNow:1,
       message:{
@@ -40,6 +43,12 @@ class Usernotice extends React.Component{
           boxes[i].checked = e.target.checked;
       }
     })
+    $('#myModal').on('hidden.bs.modal',(e)=>{
+      this.setState({
+        ...this.state,
+        nimmpDataShow: false,
+      })
+    })
   }
 
   check(id){
@@ -52,14 +61,15 @@ class Usernotice extends React.Component{
           o.isRead=true
         }
       })
-
       this.setState({
         ...this.state,
         message:{
           date:rs.updateTime,
           title:rs.title,
           user:rs.publisher,
-          content:rs.content
+          content:rs.content,
+          messageType: rs.messageType,
+          entityId: rs.entityId,
         }
       })
     })
@@ -97,6 +107,18 @@ class Usernotice extends React.Component{
     })
   }
 
+  gotodati(id) {
+    let user = sessionStorage.getItem('userData');
+    user = JSON.parse(user);
+    $.get(chakannmmp(id,user.authToken), (rs) => {
+      this.setState({
+        ...this.state,
+        nimmpData: rs,
+        nimmpDataShow: true,
+      })
+    })
+  }
+
   render(){
     let no,page;
     if(this.state.no.results!=undefined){
@@ -114,26 +136,26 @@ class Usernotice extends React.Component{
       ))
       page = {pageNum:this.state.no.pages,total:this.state.no.total,pageNow:this.state.pageNow};
     }
-
     return(
       <div className={PersonalStyle.infoContent}>
-        <div className="modal fade" id="myModal" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div className="modal-dialog" role="document">
+        <div className="modal fade bs-example-modal-lg" id="myModal" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div className="modal-dialog modal-lg" role="document">
             <div className="modal-content">
               <div className="modal-header">
                 <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 className="modal-title" id="myModalLabel">消息</h4>
               </div>
-              <div className="modal-body">
+              <div className="modal-body" style={{overflow:'hidden'}}>
                 <div>标题：{this.state.message.title}</div>
                 <div>时间：{this.state.message.date}</div>
                 <div>发布者：{this.state.message.user}</div>
                 <div>内容：<br/>
                   <div style={{padding:'5px',color:'#666'}}>{this.state.message.content}</div>
                 </div>
+                {this.state.message.messageType==2?<button className='btn btn-danger btn-xs' onClick={()=>this.gotodati(this.state.message.entityId)}>查看详情</button>:''}
+                {this.state.nimmpDataShow?<DataPushState data={this.state.nimmpData} json={this.state.nimmpData} back={(status)=>this.back(status)} pos="nmmp"/>:''}
               </div>
               <div className="modal-footer">
-
                 <button type="button" className="btn btn-default" data-dismiss="modal">关闭</button>
               </div>
             </div>

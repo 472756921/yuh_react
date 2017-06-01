@@ -88,12 +88,12 @@ class UserBaseData extends React.Component{
         <div style={{float:'left'}}>
           <div className={PersonalStyle.inputGroup}>
             <div>身高 : </div>
-            <input placeholder={this.state.baseData.height} name="height" />
+            <input maxLength="30" placeholder={this.state.baseData.height} name="height" />
             <span style={{color:'#666'}}>cm</span>
           </div>
           <div className={PersonalStyle.inputGroup}>
             <div>体重 : </div>
-            <input placeholder={this.state.baseData.weight}  name="weight" />
+            <input maxLength="30" placeholder={this.state.baseData.weight}  name="weight" />
             <span style={{color:'#666'}}>kg</span>
           </div>
           <div className={PersonalStyle.inputGroup}>
@@ -110,7 +110,7 @@ class UserBaseData extends React.Component{
           <div className={PersonalStyle.clear}></div>
           <div className={PersonalStyle.inputGroup}>
             <div>健康状况 : </div>
-            <textarea placeholder={this.state.baseData.healthCondition} name="healthCondition"></textarea>
+            <textarea maxLength="250" placeholder={this.state.baseData.healthCondition} name="healthCondition"></textarea>
           </div>
         </div>
         <div className={PersonalStyle.clear}></div>

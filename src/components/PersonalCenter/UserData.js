@@ -198,12 +198,12 @@ class UserData extends React.Component{
         <div style={{float:'left'}}>
           <div className={PersonalStyle.inputGroup}>
             <div>姓名 : </div>
-            <input placeholder={this.state.userData.realName} name="realName" disabled/>
+            <input maxLength="30" placeholder={this.state.userData.realName} name="realName" disabled/>
             <span>*</span>
           </div>
           <div className={PersonalStyle.inputGroup}>
             <div>性别 : </div>
-            <input placeholder={this.state.userData.gender=='MALE'?'男':'女'} disabled/>
+            <input maxLength="30" placeholder={this.state.userData.gender=='MALE'?'男':'女'} disabled/>
             <span>*</span>
           </div>
           <div className={PersonalStyle.inputGroup}>
@@ -223,33 +223,33 @@ class UserData extends React.Component{
           </div>
           <div className={PersonalStyle.inputGroup}>
             <div>详细地址 : </div>
-            <input placeholder={this.state.userData.address} name="address"/>
+            <input maxLength="30" placeholder={this.state.userData.address} name="address"/>
           </div>
           <div className={PersonalStyle.inputGroup}>
             <div>出生年月 : </div>
-            <input ref="bir" placeholder={this.state.userData.birthday} name="birthday" disabled/>
+            <input maxLength="30" ref="bir" placeholder={this.state.userData.birthday} name="birthday" disabled/>
             <span>*</span>
           </div>
           <div className={PersonalStyle.inputGroup}>
             <div>联系电话 : </div>
-            <input placeholder={this.state.userData.backupPhoneNumber} name="backupPhoneNumber"/>
+            <input maxLength="30" placeholder={this.state.userData.backupPhoneNumber} name="backupPhoneNumber"/>
           </div>
           <div className={PersonalStyle.inputGroup}>
             <div>手机号码 : </div>
-            <input placeholder={this.state.userData.phoneNumber} name="phoneNumber"/>
+            <input maxLength="30" placeholder={this.state.userData.phoneNumber} name="phoneNumber"/>
           </div>
           <div className={PersonalStyle.inputGroup}>
             <div>邮箱地址 : </div>
-            <input placeholder={this.state.userData.email} name="email"/>
+            <input maxLength="30" placeholder={this.state.userData.email} name="email"/>
           </div>
           <div className={PersonalStyle.inputGroup}>
             <div>身份证号 : </div>
-            <input placeholder={this.state.userData.idCardNumber} name="idCardNumber" ref="idCardNumber" onBlur={()=>this.checkBrth()}/>
+            <input maxLength="30" placeholder={this.state.userData.idCardNumber} name="idCardNumber" ref="idCardNumber" onBlur={()=>this.checkBrth()}/>
             <span>*{this.state.info}</span>
           </div>
           <div className={PersonalStyle.inputGroup}>
             <div>职业 : </div>
-            <input placeholder={this.state.userData.occupation}  name="occupation"/>
+            <input maxLength="30" placeholder={this.state.userData.occupation}  name="occupation"/>
           </div>
         </div>
 

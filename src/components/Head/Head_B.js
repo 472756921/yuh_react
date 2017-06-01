@@ -103,7 +103,7 @@ class appHead_B extends React.Component {
   render() {
     let navLi = this.state.nav.map((navObj,i)=>{
         return (
-          <li key={i}>
+          <li key={i} style={{zIndex:'99'}}>
             {navObj.las.length!=0?
               <span style={{cursor:'pointer'}}>
                 {navObj.text}
