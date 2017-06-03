@@ -88,10 +88,10 @@ class Usernotice extends React.Component{
     }
     $.post(redmessages(user.authToken),JSON.stringify({ids:ids,operate:type,type:1}),()=>{
       $.get(Getmessages(1,10,1,user.authToken),(rss)=>{
-        location.reload();
         this.setState({
           no:rss,
         })
+        location.reload();
       })
     })
   }

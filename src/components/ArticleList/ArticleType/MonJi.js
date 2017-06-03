@@ -168,7 +168,7 @@ class MonJi extends React.Component{
                 <span className={MonJiStyle.vertical_bar}></span>趋势图
               </div>
               <h4 className={MonJiStyle.report_Risk_index_A_dish_title_B}>血压趋势图</h4>
-              <img src="http://121.42.142.228:8080/images/xueya.png"/>
+              <img src="http://115.28.173.39:8080/images/xueya.png"/>
               <br/>
               <img src={this.state.bloodPressure_pic} style={{marginBottom: '25px'}} width="700"/>
               <div className={[MonJiStyle.img_text_content,'pull-right'].join(' ')}>{this.state.bloodPressureText}</div>
@@ -198,7 +198,7 @@ class MonJi extends React.Component{
               </table>
               <br/>
               <h4 className={MonJiStyle.report_Risk_index_A_dish_title_B}>血糖趋势图</h4>
-              <img src="http://121.42.142.228:8080/images/xuetang.png"/>
+              <img src="http://115.28.173.39:8080/images/xuetang.png"/>
               <br/>
               <img src={this.state.bloodSugar_pic} style={{marginBottom: '25px'}} width="700"/>
               <div className={[MonJiStyle.img_text_content,'pull-right'].join(' ')}>{this.state.bloodSugarText}</div>

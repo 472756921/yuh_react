@@ -82,7 +82,6 @@ class UserDrugSituation extends React.Component{
       })
     }
   }
-
   clear() {
    this.refs.mid.clear();
    this.refs.midH.clear();
@@ -90,8 +89,9 @@ class UserDrugSituation extends React.Component{
     $("#flatpickr_tryme_e").val('');
     $("#ssml").val('');
   }
-
-
+  onChange(event){
+    event.target.value = event.target.value.replace(/[^\d.]/g,'');
+  };
   render(){
     let ti=[];
     for(let i=1;i<=10;i++){
@@ -236,7 +236,7 @@ class UserDrugSituation extends React.Component{
           <select style={{width:'100px'}} ref={node=>{usingFrequency=node}}>
             {ti}
           </select>
-          <input maxLength="5" placeholder="单次用药量" style={{width:'100px'}} id="ssml"  ref={node=>{singleDose=node}}/>
+          <input maxLength="5" placeholder="单次用药量" style={{width:'100px'}} id="ssml" onChange={node=>this.onChange(node)}  ref={node=>{singleDose=node}}/>
           <select style={{width:'65px'}} ref={node=>medicineUnit=node}>
             <option value="g">g</option>
             <option value="mg">mg</option>

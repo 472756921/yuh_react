@@ -67,7 +67,7 @@ class appHead_A extends React.Component {
           <div className="pull-left">
             <div>
               <img src={require('images/icon/phone.png')} alt="下载优医APP"/>
-              <a href="http://121.42.142.228:8080/#/qr_code">手机端APP</a>
+              <a href="http://115.28.173.39:8080/#/qr_code">手机端APP</a>
             </div>
             <div className={HeadStyle.verticalBar}>|</div>
             <div>

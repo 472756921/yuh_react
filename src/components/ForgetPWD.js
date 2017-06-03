@@ -129,9 +129,9 @@ class ForgetPWD extends React.Component{
         </div>
         <div className={LoginStyle.res}>
           <div className={LoginStyle.step}>
-            <div className={[LoginStyle.steplist,LoginStyle.steplist_active].join(' ')}>身份验证</div>
-            <div className={LoginStyle.steplist}>密保问题</div>
-            <div className={LoginStyle.steplist}>修改完成</div>
+            <div className={[LoginStyle.steplist,this.state.step==1?LoginStyle.steplist_active:''].join(' ')}>身份验证</div>
+            <div className={[LoginStyle.steplist,this.state.step==2?LoginStyle.steplist_active:''].join(' ')}>密保问题</div>
+            <div className={[LoginStyle.steplist,this.state.step==3?LoginStyle.steplist_active:''].join(' ')}>修改完成</div>
           </div>
           <div className={LoginStyle.centerBlock} style={this.state.step==1?{}:{display:'none'}}>
               <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>账号:</div><input ref="userName" maxLength="32"/><span className={LoginStyle.red}> *</span></div>

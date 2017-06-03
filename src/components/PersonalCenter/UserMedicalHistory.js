@@ -221,7 +221,7 @@ class UserMedicalHistory extends React.Component{
           <tbody>
             <tr className='active'>
               <td>就医日期</td>
-              <td>情况描述</td>
+              <td width="600">情况描述</td>
               <td>操作</td>
             </tr>
             {mid}

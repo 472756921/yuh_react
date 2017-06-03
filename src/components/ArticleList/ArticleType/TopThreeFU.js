@@ -31,6 +31,7 @@ class TopThreeFU extends React.Component{
         data: rs.results[0],
         list: rs.results[0].itemJsons,
         pages: rs.pages,
+        pageNow: page,
         total: rs.total
       })
     })
@@ -124,7 +125,7 @@ class TopThreeFU extends React.Component{
             {list}
           </tbody>
         </table>
-        <Page data={{pageNum:this.state.pages,total:this.state.total}}  pageChange={(pageNow)=>this.pageChange(pageNow)}/>
+        <Page data={{pageNum:this.state.pages,total:this.state.total,pageNow:this.state.pageNow}}  pageChange={(pageNow)=>this.pageChange(pageNow)}/>
       </div>
     )
   }

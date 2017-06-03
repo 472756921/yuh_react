@@ -1,9 +1,0 @@
-{
-  "generator-react-webpack": {
-    "appName": "uyh",
-    "style": "less",
-    "cssmodules": true,
-    "postcss": true,
-    "generatedWithVersion": 4
-  }
-}

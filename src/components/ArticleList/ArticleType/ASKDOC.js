@@ -34,7 +34,9 @@ class ASKDOC extends React.Component{
     let user = sessionStorage.getItem('userData');
     user = JSON.parse(user);
     $.post(ASKDOCcommentPost(id,user.authToken),JSON.stringify(json),()=>{
-      $('#myModal').modal('hide')
+      alert('评价完成');
+      $('#myModal').modal('hide');
+      $('#pingjia').hide();
     })
   }
 
@@ -50,12 +52,7 @@ class ASKDOC extends React.Component{
     };
     $.post(buchongtijiao(id,user.authToken),JSON.stringify(json),()=>{
       alert('提交成功');
-      this.setState({
-        ...this.state,
-        data:{
-          status:1
-        }
-      })
+      location.reload();
     });
   }
 
@@ -68,23 +65,28 @@ class ASKDOC extends React.Component{
     let addReports = '暂无';
 
     if (this.state.data != '') {
-      if (this.state.data.assistantAdvice.advice != undefined) {
-        mannerment = <div className={ASKDOCDatileStyle.charGroup}>
-          <img src={this.state.data.assistantAdvice.icon} height="85" width="85"/>
-          <div className={ASKDOCDatileStyle.chatPo}>
-            <div className={ASKDOCDatileStyle.name}><span>{this.state.data.assistantAdvice.realName}</span>
-              <small>{this.state.data.assistantAdvice.advice.split('<br/>')[0]}</small>
+      if (this.state.data.assistantAdvice != undefined) {
+        if (this.state.data.assistantAdvice.advice != undefined) {
+          mannerment = <div className={ASKDOCDatileStyle.charGroup}>
+            <img src={this.state.data.assistantAdvice.icon} height="85" width="85"/>
+            <div className={ASKDOCDatileStyle.chatPo}>
+              <div className={ASKDOCDatileStyle.name}><span>{this.state.data.assistantAdvice.realName}</span>
+                <small>{this.state.data.assistantAdvice.advice.split('<br/>')[0]}</small>
+              </div>
+              <div className={ASKDOCDatileStyle.po}>{this.state.data.assistantAdvice.advice.split('<br/>')[1]}</div>
             </div>
-            <div className={ASKDOCDatileStyle.po}>{this.state.data.assistantAdvice.advice.split('<br/>')[1]}</div>
           </div>
-        </div>
+        }
       }
 
       if(this.state.data.addReports != undefined) {
         addReports = this.state.data.addReports.map((o, i)=> {
-          let img = o.addReports.map((j,h)=>{
-            return (<img key={h} src={j.url} width="200"  data-toggle="modal" data-target="#myModal2" onClick="" data-img={j.url}/>)
-          })
+          let img='';
+          if(o.addReports!=undefined && o.addReports.length>0){
+             img = o.addReports.map((j,h)=>{
+              return (<img key={h} src={j.url} width="200"  data-toggle="modal" data-target="#myModal2" onClick="" data-img={j.url}/>)
+            })
+          }
           return (
             <div key={i}>
               <div>补充时间：{o.addTime}</div>
@@ -179,7 +181,7 @@ class ASKDOC extends React.Component{
         </div>
 
         <div className={ASKDOCDatileStyle.head}>
-          <img src={this.state.data!=''?this.state.data.group.logo:''} style={{border:'1px solid #e3e3e3'}} width="140" height="140"/>
+          <img src={this.state.data!=''&&this.state.data.group.logo!=undefined?this.state.data.group.logo:''} style={{border:'1px solid #e3e3e3'}} width="140" height="140"/>
           <div className={ASKDOCDatileStyle.group}>
             <h3>{this.state.data!=''?this.state.data.group.name:''} </h3>
             <div>{this.state.data!=''?this.state.data.group.info:''}</div>
@@ -222,8 +224,8 @@ class ASKDOC extends React.Component{
         </div>
 
         <div className={ASKDOCDatileStyle.btnGroup}>
-          {this.state.data.status==4&&!this.state.data.isCommented?<button className={ASKDOCDatileStyle.btn} data-toggle="modal" data-target="#myModal">评价</button>:''}
-          {this.state.data.status==2?<button className={ASKDOCDatileStyle.btn} onClick={()=>this.buchong()}>补充提交</button>:''}
+          {this.state.data.status==4&&!this.state.data.isCommented?<button id="pingjia" className={ASKDOCDatileStyle.btn} data-toggle="modal" data-target="#myModal">评价</button>:''}
+          {this.state.data.status==2?<button className={ASKDOCDatileStyle.btn} id="buchong"  onClick={()=>this.buchong()}>补充提交</button>:''}
           <button className={ASKDOCDatileStyle.btn_back} onClick={()=>{window.history.back()}}>返回</button>
         </div>
       </div>

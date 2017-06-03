@@ -3,7 +3,7 @@
  */
 
 
-const _API = 'http://121.42.142.228:8080/';
+const _API = 'http://115.28.173.39:8080/';
 
 //文章列表接口
 export const ARTICLE = function (type,page,pageSize){

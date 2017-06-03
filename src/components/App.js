@@ -55,7 +55,7 @@ class AppComponent extends React.Component {
           <Route path='Articles/:type' component={Articles}/>
           <Route path='Article/:type/:id' component={ArticleDetails}/>
           <Route path='service' component={Service}/>
-          <Route path='pay' component={Pay}/>
+          <Route path='pay' component={Pay}  onEnter={requireCredentials}/>
           <Route path='Introduction' component={Introduction}/>
           <Route path='Agreement' component={Agreement}/>
           <Route path='register' component={Registers}/>

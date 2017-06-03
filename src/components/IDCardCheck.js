@@ -9,7 +9,7 @@ function IdentityCodeValid(code) {
   var tip = "";
   var pass= true;
   var cityName = city[code.substr(0,2)];
-  if(!code || !/^\d{6}(18|19|20)?\d{2}(0[1-9]|1[12])(0[1-9]|[12]\d|3[01])\d{3}(\d|X)$/i.test(code)){
+  if(!code || !/^\d{6}(18|19|20)?\d{2}(0[1-9]|1[012])(0[1-9]|[12]\d|3[01])\d{3}(\d|X)$/i.test(code)){
     tip = "身份证号格式错误";
     pass = false;
   }else if(!city[code.substr(0,2)]){

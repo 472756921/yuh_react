@@ -232,11 +232,11 @@ class UserData extends React.Component{
           </div>
           <div className={PersonalStyle.inputGroup}>
             <div>联系电话 : </div>
-            <input maxLength="30" placeholder={this.state.userData.backupPhoneNumber} name="backupPhoneNumber"/>
+            <input maxLength="20" placeholder={this.state.userData.backupPhoneNumber} name="backupPhoneNumber"/>
           </div>
           <div className={PersonalStyle.inputGroup}>
             <div>手机号码 : </div>
-            <input maxLength="30" placeholder={this.state.userData.phoneNumber} name="phoneNumber"/>
+            <input maxLength="20" placeholder={this.state.userData.phoneNumber} name="phoneNumber"/>
           </div>
           <div className={PersonalStyle.inputGroup}>
             <div>邮箱地址 : </div>

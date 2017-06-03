@@ -41,6 +41,10 @@ class UserBaseData extends React.Component{
     }
   }
 
+  onChange(event){
+    event.target.value = event.target.value.replace(/[^\d.]/g,'')
+  };
+
   render(){
     $('input[type="checkbox"]').map((i,o)=>{
       if(this.state.baseData.chronicDiseaseType==3){
@@ -88,12 +92,12 @@ class UserBaseData extends React.Component{
         <div style={{float:'left'}}>
           <div className={PersonalStyle.inputGroup}>
             <div>身高 : </div>
-            <input maxLength="30" placeholder={this.state.baseData.height} name="height" />
+            <input onChange={node=>this.onChange(node)} maxLength="3" placeholder={this.state.baseData.height} name="height" />
             <span style={{color:'#666'}}>cm</span>
           </div>
           <div className={PersonalStyle.inputGroup}>
             <div>体重 : </div>
-            <input maxLength="30" placeholder={this.state.baseData.weight}  name="weight" />
+            <input onChange={node=>this.onChange(node)} maxLength="4" placeholder={this.state.baseData.weight}  name="weight" />
             <span style={{color:'#666'}}>kg</span>
           </div>
           <div className={PersonalStyle.inputGroup}>

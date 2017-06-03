@@ -195,7 +195,7 @@ class MyData extends React.Component{
     }.bind(this))
 
     var oReq = new XMLHttpRequest();
-    oReq.open("GET", "http://121.42.142.228:8080/app/api/account/health/report?endDate="+et+"&startDate="+st+"&type="+type, true);
+    oReq.open("GET", "http://115.28.173.39:8080/app/api/account/health/report?endDate="+et+"&startDate="+st+"&type="+type, true);
     oReq.responseType = "blob";
     oReq.setRequestHeader('authToken',user.authToken)
     oReq.onload = function(oEvent) {
@@ -217,7 +217,7 @@ class MyData extends React.Component{
     if(this.state.data.length>0){
       tableData = this.state.data.map((obj,i)=>{
         return (
-          <tr key={i}>
+          <tr key={i} className={obj.isWarning?'danger':''}>
             {this.state.index=='心电图'||this.state.index=='检测报告'? '':<td>{obj.morningSystolicPressure}{obj.fastBloodSugar}{obj.bloodFatChol}{obj.spo}{obj.urineAcid}</td>}
             {this.state.index=='血尿酸'||this.state.index=='心电图'||this.state.index=='检测报告'?'': <td>{obj.morningDiastolicPressure}{obj.postPrandilaSugar}{obj.bloodFatTg}{obj.heartRate}</td>}
             {this.state.index=='血氧'||this.state.index=='血尿酸'||this.state.index=='心电图'||this.state.index=='检测报告'?'': <td>{obj.pulseRate}{obj.randomBloodSugar}{obj.bloodFatLdl}</td>}
