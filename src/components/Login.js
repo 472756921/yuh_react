@@ -37,17 +37,17 @@ class Login extends React.Component{
       data:JSON.stringify(postJson),
       success:(rs)=>{
         try{
-          sessionStorage.setItem('userData', JSON.stringify(rs));
           if(rs.type!=0){
             this.postMessages(rs);
           }else{
             hashHistory.push({pathname:'/'});
-          }
-          if(remberPWD.checked){
-            localStorage.setItem('userData',  JSON.stringify({userName:userName,pwd:pwd}));
-            localStorage.setItem('userInfroData',  JSON.stringify(rs));
-          }else{
-            localStorage.clear();
+            sessionStorage.setItem('userData', JSON.stringify(rs));
+            if(remberPWD.checked){
+              localStorage.setItem('userData',  JSON.stringify({userName:userName,pwd:pwd}));
+              localStorage.setItem('userInfroData',  JSON.stringify(rs));
+            }else{
+              localStorage.clear();
+            }
           }
         }catch(e){
           alert("您的浏览器开起了秘密浏览模式, 请关闭该模式后重试.");
@@ -62,7 +62,7 @@ class Login extends React.Component{
     })
   }
   changeYZM(){
-    this.refs.YZMIMG.src='http://115.28.173.39:8080/captcha' + "?" + Math.random();
+    this.refs.YZMIMG.src='http://115.28.173.39/captcha' + "?" + Math.random();
   }
 
   forgetPWD(){
@@ -85,8 +85,8 @@ class Login extends React.Component{
   }
 
   postMessages(rs){
-    document.getElementById("child").contentWindow.postMessage(rs,'http://www.uyidoctor.com:8080/#/login')
-     window.location='http://www.uyidoctor.com:8080';
+    document.getElementById("child").contentWindow.postMessage(rs,'http://www.uyidoctor.com/index.html#/login')
+     window.location='http://www.uyidoctor.com/index.html#/center';
   }
 
   render(){
@@ -95,14 +95,14 @@ class Login extends React.Component{
         <div className={LoginStyle.top}>
           <img src={require('images/icon/logo.png')} onClick={()=>{hashHistory.push({pathname:'/'})}} />
         </div>
-        <iframe style={{opacity:'0',position:'absolute'}} id="child" src='http://www.uyidoctor.com:8080/#/login' onLoad={()=>{this.refs.YZMIMG.src='http://115.28.173.39:8080/captcha' + "?" + Math.random();}} allowFullScreen></iframe>
+        <iframe style={{opacity:'0',position:'absolute'}} id="child" src='http://www.uyidoctor.com/index.html#/login' allowFullScreen></iframe>
         <div className={LoginStyle.res}>
           <div className={LoginStyle.leftT}><img src={require('images/banner/loginBanner.jpg')}/></div>
           <div className={LoginStyle.rightT}>
             <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>账号:</div><input ref="userName" maxLength="32"/></div>
             <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>密码:</div><input ref="pwd" type="password" maxLength="32"/></div>
             <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>验证码:</div><input id="yzm" ref="yzm" maxLength="4" className={LoginStyle.yzm}/>
-              <img height="35px" src='http://115.28.173.39:8080/captcha' ref="YZMIMG" style={{verticalAlign:'top',cursor:'pointer'}} title="点击切换" onClick={()=>this.changeYZM()}/>
+              <img height="35px" src='http://115.28.173.39/captcha' ref="YZMIMG" style={{verticalAlign:'top',cursor:'pointer'}} title="点击切换" onClick={()=>this.changeYZM()}/>
             </div>
             <div>
               <div className={LoginStyle.renm}>

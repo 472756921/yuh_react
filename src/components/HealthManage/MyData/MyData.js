@@ -195,7 +195,7 @@ class MyData extends React.Component{
     }.bind(this))
 
     var oReq = new XMLHttpRequest();
-    oReq.open("GET", "http://115.28.173.39:8080/app/api/account/health/report?endDate="+et+"&startDate="+st+"&type="+type, true);
+    oReq.open("GET", "http://115.28.173.39/app/api/account/health/report?endDate="+et+"&startDate="+st+"&type="+type, true);
     oReq.responseType = "blob";
     oReq.setRequestHeader('authToken',user.authToken)
     oReq.onload = function(oEvent) {
