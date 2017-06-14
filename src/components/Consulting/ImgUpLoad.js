@@ -59,7 +59,7 @@ class ImgUpLoad extends React.Component{
       this.refs.medicalTxt.value = '';
     }
     this.setState({
-      img: '',
+      img: [],
     })
   }
 

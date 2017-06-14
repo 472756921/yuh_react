@@ -4,7 +4,7 @@
 import React from 'react';
 import HeadStyle from '../../styles/header.css';
 import {hashHistory} from 'react-router';
-import {getMessagesNoRead,LoginOutAPI} from '../../InterFace/InterfaceAPI';
+import {getMessagesNoRead,LoginOutAPI,getDownCR} from '../../InterFace/InterfaceAPI';
 
 
 class appHead_A extends React.Component {
@@ -67,7 +67,7 @@ class appHead_A extends React.Component {
           <div className="pull-left">
             <div>
               <img src={require('images/icon/phone.png')} alt="下载优医APP"/>
-              <a href="http://115.28.173.39/#/qr_code">手机端APP</a>
+              <a href={getDownCR()}>手机端APP</a>
             </div>
             <div className={HeadStyle.verticalBar}>|</div>
             <div>

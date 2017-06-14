@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import MyDataStyle from '../../../styles/MyData.css';
-import {UserData,UserDataImg} from '../../../InterFace/InterfaceAPI';
+import {UserData,UserDataImg,getDayPlan} from '../../../InterFace/InterfaceAPI';
 import UploadData from './UploadData';
 import Page from '../../Page/Page';
 
@@ -195,7 +195,7 @@ class MyData extends React.Component{
     }.bind(this))
 
     var oReq = new XMLHttpRequest();
-    oReq.open("GET", "http://115.28.173.39/app/api/account/health/report?endDate="+et+"&startDate="+st+"&type="+type, true);
+    oReq.open("GET", getDayPlan(et,st,type), true);
     oReq.responseType = "blob";
     oReq.setRequestHeader('authToken',user.authToken)
     oReq.onload = function(oEvent) {

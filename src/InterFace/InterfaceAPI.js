@@ -3,7 +3,7 @@
  */
 
 
-const _API = 'http://115.28.173.39/';
+const _API = '/';
 
 //文章列表接口
 export const ARTICLE = function (type,page,pageSize){
@@ -534,4 +534,39 @@ export const chakannmmp= (id,authToken)=>{
   return {url:httpAPI,type:'get',contentType:'application/json',headers: {
     "authToken":authToken
   }};
+}
+
+export const getyazm= ()=>{
+  const httpAPI = _API+'captcha?' + Math.random();
+  return httpAPI;
+}
+
+export const getOldLogin= ()=>{
+  const httpAPI = 'http://'+window.location.host+'/index.html#/login';
+  console.log(httpAPI);
+  return httpAPI;
+}
+export const getOldCenter= ()=>{
+  const httpAPI = _API+'index.html#/center';
+  return httpAPI;
+}
+
+export const getDayPlan= (et, st, type)=>{
+  const httpAPI = _API+'app/api/account/health/report?endDate='+et+"&startDate="+st+"&type="+type;
+  return httpAPI;
+}
+
+export const getDownReport= (url, id)=>{
+  const httpAPI = _API+'app/api/report/'+url+"?id="+id;
+  return httpAPI;
+}
+
+export const getImg= (name)=>{
+  const httpAPI = _API+'images/'+name+'.png';
+  return httpAPI;
+}
+
+export const getDownCR= (name)=>{
+  const httpAPI = _API+'index.html#/qr_code';
+  return httpAPI;
 }

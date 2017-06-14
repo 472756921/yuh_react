@@ -111,6 +111,7 @@ class UserData extends React.Component{
 
   checkBrth(){
     let id = this.refs.idCardNumber.value;
+    id = id.toUpperCase();
     if(id==''){
       return
     }

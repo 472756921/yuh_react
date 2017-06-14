@@ -7,7 +7,7 @@ import {hashHistory} from 'react-router';
 import Page from '../../Page/Page';
 import {The_risk_assessment,the_health_managements,
   The_docGroup,getAutomationReport,majordignosereport,DownLoadRepot,
-  UserGroupType,UserTopThreeList} from '../../../InterFace/InterfaceAPI';
+  UserGroupType,UserTopThreeList,getDownReport} from '../../../InterFace/InterfaceAPI';
 
 let user;
 class ReportTable extends React.Component{
@@ -280,7 +280,7 @@ class ReportTable extends React.Component{
     }
 
     var oReq = new XMLHttpRequest();
-    oReq.open("GET", "http://115.28.173.39/app/api/report/"+url+"?id="+id, true);
+    oReq.open("GET", getDownReport(url, id), true);
     oReq.responseType = "blob";
     oReq.setRequestHeader('authToken',user.authToken)
     oReq.onload = function(oEvent) {

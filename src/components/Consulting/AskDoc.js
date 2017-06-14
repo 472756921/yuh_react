@@ -37,7 +37,7 @@ class AskM extends React.Component{
       return;
     }
     if(this.refs.desc.value==''||this.refs.help.value==''){
-      this.refs.tishi.innerHTML='请输入个人既往病史、请输入希望医生提供的帮助';
+      this.refs.tishi.innerHTML='请输入病情简述、希望医生提供的帮助';
       return
     }
     let infoA =  this.refs.imagA.getData();

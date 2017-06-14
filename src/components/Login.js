@@ -4,7 +4,7 @@
 import React from 'react';
 import LoginStyle from '../styles/Login.css';
 import {hashHistory} from 'react-router';
-import {LoginAPI} from '../InterFace/InterfaceAPI';
+import {LoginAPI,getyazm,getOldLogin,getOldCenter} from '../InterFace/InterfaceAPI';
 
 class Login extends React.Component{
   login(){
@@ -62,7 +62,7 @@ class Login extends React.Component{
     })
   }
   changeYZM(){
-    this.refs.YZMIMG.src='http://115.28.173.39/captcha' + "?" + Math.random();
+    this.refs.YZMIMG.src=getyazm();
   }
 
   forgetPWD(){
@@ -85,8 +85,8 @@ class Login extends React.Component{
   }
 
   postMessages(rs){
-    document.getElementById("child").contentWindow.postMessage(rs,'http://www.uyidoctor.com/index.html#/login')
-     window.location='http://www.uyidoctor.com/index.html#/center';
+    document.getElementById("child").contentWindow.postMessage(rs,getOldLogin());
+    window.location=getOldCenter();
   }
 
   render(){
@@ -95,14 +95,14 @@ class Login extends React.Component{
         <div className={LoginStyle.top}>
           <img src={require('images/icon/logo.png')} onClick={()=>{hashHistory.push({pathname:'/'})}} />
         </div>
-        <iframe style={{opacity:'0',position:'absolute'}} id="child" src='http://www.uyidoctor.com/index.html#/login' allowFullScreen></iframe>
+        <iframe style={{opacity:'0',position:'absolute'}} id="child" src={getOldLogin()} allowFullScreen></iframe>
         <div className={LoginStyle.res}>
           <div className={LoginStyle.leftT}><img src={require('images/banner/loginBanner.jpg')}/></div>
           <div className={LoginStyle.rightT}>
             <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>账号:</div><input ref="userName" maxLength="32"/></div>
             <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>密码:</div><input ref="pwd" type="password" maxLength="32"/></div>
             <div className={LoginStyle.textGroup}><div className={LoginStyle.text}>验证码:</div><input id="yzm" ref="yzm" maxLength="4" className={LoginStyle.yzm}/>
-              <img height="35px" src='http://115.28.173.39/captcha' ref="YZMIMG" style={{verticalAlign:'top',cursor:'pointer'}} title="点击切换" onClick={()=>this.changeYZM()}/>
+              <img height="35px" src={getyazm()} ref="YZMIMG" style={{verticalAlign:'top',cursor:'pointer'}} title="点击切换" onClick={()=>this.changeYZM()}/>
             </div>
             <div>
               <div className={LoginStyle.renm}>
