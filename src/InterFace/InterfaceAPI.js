@@ -3,7 +3,7 @@
  */
 
 
-const _API = '/';
+const _API = 'http://120.25.122.111/';
 
 //文章列表接口
 export const ARTICLE = function (type,page,pageSize){

@@ -45,7 +45,6 @@ class ASKDOC extends React.Component{
     user = JSON.parse(user);
     let id = this.state.data.id;
     let img = this.refs.img.getData();
-    console.log(img);
     let json = {
       addReports:img.img,
       addTxt:img.medicalTxt,

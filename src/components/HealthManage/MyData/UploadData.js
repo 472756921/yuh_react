@@ -154,13 +154,16 @@ class UploadData extends React.Component{
             },
             data:JSON.stringify(json),
             success:function(response,status,xhr){
-              this.setState({
+              let _this = this;
+            setTimeout(function() {
+              _this.setState({
                 type:'show',
                 data:response,
                 states:'none',
                 info: '',
                 json: json
               })
+            },5000);
             }.bind(this),
             error:function(data,status) {
               this.setState({
