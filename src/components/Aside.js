@@ -11,10 +11,10 @@ class Aside extends React.Component {
               <img src={require('images/icon/phone_white.png')} alt="下载优医APP"/>
               <div className={[AsideStyle.aside_left_content,AsideStyle.wechar].join(" ")}>
                 <h4>优医-用户版</h4>
-                <img src={require('images/icon/wechat_1.png')}/>
+                <img src={require('images/icon/userAPP.png')} width="100"/>
                 <div className={AsideStyle.striping}></div>
                 <h4>优医-医生版</h4>
-                <img src={require('images/icon/wechat_1.png')}/>
+                <img src={require('images/icon/doctorApp.png')} width="100"/>
               </div>
             </div>
             <div className={AsideStyle.aside_btn}>
