@@ -31,14 +31,14 @@ class Footer extends React.Component {
                 <h3 className={FooterStyle.footer_title}>优医用户下载</h3>
                 <small style={{color: '#eee'}}>user app</small>
                 <div  className={FooterStyle.footer_A_list}>
-                  <img src={require('images/icon/wechat_1.png')}/>
+                  <img src={require('images/icon/userAPP.png')}/>
                 </div>
               </div>
               <div className={[FooterStyle.footer_A_text_content,FooterStyle.cen].join(" ")}>
                 <h3 className={FooterStyle.footer_title}>优医医生下载</h3>
                 <small style={{color: '#eee'}}>doctor app</small>
                 <div  className={FooterStyle.footer_A_list}>
-                  <img src={require('images/icon/wechat_1.png')}/>
+                  <img src={require('images/icon/doctorApp.png')}/>
                 </div>
               </div>
             </div>
